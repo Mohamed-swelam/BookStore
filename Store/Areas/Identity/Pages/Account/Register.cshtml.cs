@@ -165,6 +165,7 @@ namespace Store.Areas.Identity.Pages.Account
                 user.Name = Input.Name;
                 user.PostalCode = Input.PostalCode;
                 user.City = Input.City;
+                user.State = Input.State;
                 user.StreetAddress = Input.StreetAddress;
                 user.PhoneNumber = Input.PhoneNumber; 
                 if (Input.Role == SD.Role_Company)

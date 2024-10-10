@@ -21,8 +21,13 @@ public class HomeController : Controller
     }
     public IActionResult Details(int productId)
     {
-        Product product = unitOfWork.Product.Get(i=>i.Id == productId, IncludeProperities: "Category");
-        return View(product);
+        ShoppingCart cart = new()
+        {
+            Product = unitOfWork.Product.Get(u => u.Id == productId, IncludeProperities: "Category"),
+            Count = 1,
+            ProductId = productId
+        };
+        return View(cart);
     }
     [HttpPost]
     [Authorize]
